@@ -18,7 +18,7 @@ namespace FruitsApp
 
             bool exit = false;
             // Creating an Array of six element the size
-            String[] fruits = new String[6]{ "Banana", "Blueberry", "Cherry", "Apple", "Cucumber", "Orange " };
+            
             
             //begining  of the main loop
             //menu will pop up until you choose to exit
@@ -31,8 +31,9 @@ namespace FruitsApp
                 {
                     //Display main menu
                     Console.WriteLine("Please enter (1) to Pick >>>\n"+
-                                      "Please entet (2) to Display >>>\n"+
-                                      "Please enter (3) to Exit >>> ");
+                                      "Please enter (2) to Display >>>\n"+
+                                      "Please enter (3) to reset >>>\n"+
+                                      "Please enter (4) to Exit >>> ");
                     int choice = Convert.ToInt32(Console.ReadLine());// choice from user input
 
                     // the entry of switch statement
@@ -40,15 +41,21 @@ namespace FruitsApp
                     {
                         case 1:
 
-                            fruits1.PickMethod(fruits);// call method to pick fruit
+                            fruits1.PickMethod();// call method to pick fruit
                             break;
 
                         case 2:
 
-                            fruits1.PrintMethod(fruits);// call method to display fruit
+                            fruits1.PrintMethod();// call method to display fruit
 
                             break;
+
                         case 3:
+
+                            //reset 
+                            fruits1.resetTurns();
+                            break;
+                        case 4:
 
                             Console.WriteLine("You have choosen to exit Goodbye !!!!!!!!!");
                             exit = true;// exit the loop

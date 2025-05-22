@@ -9,19 +9,21 @@ namespace FruitsApp
     public  class FruitsField
     {
 
-        private string[] fruits;// private field
+        
         internal int choice;// internal field
 
-        // it allows user to pick fruits 3 times
-        public int turns = 0;//public filed
+        // it allows user to pick 3 fruits
+        protected int turns = 0;//private filed
 
-        protected int exit = 3;
+        private String[] arrayFruits = new String[6] { "Banana", "Blueberry", "Cherry", "Apple", "Cucumber", "Orange " };
+
+
 
 
 
         //method with an array parameter 
         //method allows user to pick fruits
-        public  void PickMethod(string[] fruits)
+        public  void PickMethod()
         {
             
             do
@@ -32,17 +34,17 @@ namespace FruitsApp
                     choice = Convert.ToInt32(Console.ReadLine());
 
                     // check if the entered choice is out of the range of the array
-                    if (choice >= 1 && choice <= fruits.Length)
+                    if (choice >= 1 && choice <= arrayFruits.Length)
                     {
                         //check if the fruits has not been eaten
-                        if (fruits[choice - 1] == "Eaten")
+                        if (arrayFruits[choice - 1] == "Eaten")
                         {
                             Console.WriteLine(" OOPS!! this has already been eaten choose another one ");
                         }
                         else
                         {
-                            Console.WriteLine(fruits[choice - 1] + " Has been eaten ");
-                            fruits[choice - 1] = "Eaten";
+                            Console.WriteLine(arrayFruits[choice - 1] + " Has been eaten ");
+                            arrayFruits[choice - 1] = "Eaten";
                             turns++;//increament, 
                         }
                     }
@@ -61,12 +63,20 @@ namespace FruitsApp
         }
 
         //Display current result using for loop
-        public  void PrintMethod(string[] array)
+        public  void PrintMethod()
         {
-            for (int i = 0; i < array.Length; i++)
+            
+            for (int i = 0; i < arrayFruits.Length; i++)
             {
-                Console.WriteLine((i + 1) + "." + array[i]);
+                Console.WriteLine((i + 1) + "." + arrayFruits[i]);
             }
+        }
+
+        //method that reset picked fruits
+        public void resetTurns()
+        {
+            arrayFruits = new string[6] { "Banana", "Blueberry", "Cherry", "Apple", "Cucumber", "Orange" };
+            turns = 0;
         }
 
 
