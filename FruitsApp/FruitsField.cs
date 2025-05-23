@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+// the namespace  container of the class
 namespace FruitsApp
 {
+    //class that contains fields and methods
     public  class FruitsField
     {
 
@@ -15,6 +16,7 @@ namespace FruitsApp
         // it allows user to pick 3 fruits
         protected int turns = 0;//private filed
 
+        // Create an array of Six elements and add values right away 
         private String[] arrayFruits = new String[6] { "Banana", "Blueberry", "Cherry", "Apple", "Cucumber", "Orange " };
 
 

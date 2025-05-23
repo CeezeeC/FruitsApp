@@ -52,7 +52,7 @@ namespace FruitsApp
 
                         case 3:
 
-                            //reset 
+                            //rcall method to reset turn
                             fruits1.resetTurns();
                             break;
                         case 4:
@@ -66,7 +66,7 @@ namespace FruitsApp
                             break;
                     }
                 }
-                // catch error and display messege
+                // catch error and display messege without crashing the application
                 catch (Exception ex)
                 {
                     
